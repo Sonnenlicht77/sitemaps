@@ -2,15 +2,14 @@
  * @Author: yangyang993 sonnenlicht@foxmail.com
 -->
 <!-- docs/.vitepress/theme/NavList.vue -->
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { withBase, useData } from 'vitepress'
+import { ref } from 'vue';
 
+import data from '../public/nav_data.json'
 const navData = ref([])
 
-fetch('/sitemaps/nav_data.json')
-  .then(res => res.json())
-  .then(data => navData.value = data)
-
+navData.value = data;
 
 </script>
 

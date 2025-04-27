@@ -1,3 +1,6 @@
+/*
+ * @Author: yangyang993 sonnenlicht@foxmail.com
+ */
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -32,5 +35,10 @@ export default defineConfig({
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/Sonnenlicht77/sitemaps' }],
+  },
+  vite: {
+    ssr: {
+      noExternal: ['@vue/server-renderer'],
+    },
   },
 })
