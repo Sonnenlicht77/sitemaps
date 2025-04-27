@@ -16,7 +16,6 @@ aside: true
 ---
 
 <script lang="ts" setup>
-import NavList from './components/NavList.vue'
 
 import { useRouter ,withBase} from 'vitepress'
 
@@ -25,28 +24,3 @@ const router = useRouter()
 router.go(withBase('/views/00.document.guide'))
 
 </script>
-<!-- 布局 -->
-<!-- <NavList /> -->
-
-<style module>
-  .home {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-
-  }
-  .sidebar{
-    width: 120px;
-
-  }
-  .main{
-    flex:1;
-  }
-
-  @media (max-width: 768px) {
-    .sidebar {
-      display: none;
-    }
-  }
-</style>

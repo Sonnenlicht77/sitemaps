@@ -19,7 +19,7 @@ aside: true
 ---
 
 <script lang="ts" setup>
-import NavList from './components/NavList.vue'
+import NavList from '../components/NavList.vue'
 // import sidebar from './components/sidebar.vue'
 import { useData,useRoute } from 'vitepress'
 import { onMounted, watch } from 'vue'
