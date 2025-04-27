@@ -1,50 +1,39 @@
-<!--
- * @Author: yangyang993 sonnenlicht@foxmail.com
--->
-<!-- docs/.vitepress/theme/NavList.vue -->
 <script setup lang="ts">
-import { withBase, useData } from 'vitepress'
-import { ref } from 'vue';
 
-import data from '../public/nav_data.json'
-const navData = ref([])
+import { ListNavItemChid } from '../types/navtypes';
 
-navData.value = data;
-
+const props = defineProps<{ listItems: ListNavItemChid[] }>()
+// console.log(props.listItems);
 </script>
 
 <template>
   <div class="nav-container">
-    <div v-for="category in navData" :key="category.id" class="category">
-      <h2>{{ category.name }}</h2>
-      <div v-for="sub in category.children" :key="sub.name" class="sub-category">
-        <h3>{{ sub.name }}</h3>
-        <div class="link-grid">
-          <a v-for="link in sub.links" :href="link.url" target="_blank" class="link-card">
-            <span v-if="link.icon" class="icon">{{ link.icon }}</span>
-            {{ link.name }}
-          </a>
-        </div>
+    <div v-for="category in props.listItems" :key="category.id" class="category">
+      <!-- title -->
+      <h2 class="category-title">{{ category.title }}</h2>
+      <!-- subcategories -->
+      <div class="subcategory">
+        <template v-for="subcategory in category?.children" :key="subcategory.id">
+
+          <!-- links -->
+          <div class="link-grid">
+            <a :href="subcategory.url" target="_blank" class="link-card">
+              <!-- <span class="icon" v-if="subcategory.icon">{{ subcategory?.icon }}</span> -->
+              {{ subcategory.title }}
+            </a>
+          </div>
+        </template>
       </div>
+
     </div>
   </div>
 </template>
 
 <style>
-:root {
-  --primary-pink: #ff69b4;
-  /* 基础粉色 */
-  --hover-pink: #ff1493;
-  /* 悬停粉色 */
-  --ripple-pink: rgba(255, 105, 180, 0.3);
-  /* 涟漪效果色 */
-  --text-dark: #4a4a4a;
-  /* 文字颜色 */
-}
-
 .nav-container {
   padding: 2rem;
-
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* 分类标题 */
@@ -80,19 +69,52 @@ navData.value = data;
   z-index: -1;
 }
 
+h2.category-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #ff1493 !important;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  text-shadow: #ffe6f0 0px 1px 2px;
+
+}
+
+.subcategory {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* 关键属性：允许换行 */
+  gap: 1.5rem;
+  /* 卡片间距 */
+  margin-bottom: 2rem;
+}
+
 /* 链接网格布局 */
 .link-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.2rem;
-  margin: 1rem 0;
+  flex: 1;
+  /* 允许伸缩 */
+  min-width: 280px;
+  /* 最小宽度防止过小 */
+  max-width: 320px;
+  /* 最大宽度控制尺寸 */
 }
 
 /* 链接卡片 - 添加水滴效果 */
 .link-card {
+  height: auto;
+  /* 高度自适应 */
+  min-height: 120px;
+  /* 最小高度保持统一 */
+  padding: 1.5rem;
+  /* 防止卡片缩小 */
   position: relative;
   overflow: hidden;
-  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+
   text-decoration: none;
   color: var(--text-dark);
   transform: translate(0, 0);
@@ -184,5 +206,22 @@ navData.value = data;
       rgba(255, 255, 255, 0.4) 50%,
       rgba(255, 255, 255, 0) 80%);
   pointer-events: none;
+}
+
+/* 响应式适配 */
+@media (max-width: 1200px) {
+  .link-grid {
+    min-width: 240px;
+    /* 中等屏幕缩小卡片 */
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .link-grid {
+    min-width: 100%;
+    /* 移动端占满整行 */
+    max-width: 100%;
+  }
 }
 </style>

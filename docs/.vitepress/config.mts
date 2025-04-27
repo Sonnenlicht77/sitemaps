@@ -2,12 +2,15 @@
  * @Author: yangyang993 sonnenlicht@foxmail.com
  */
 import { defineConfig } from 'vitepress'
+import formatData from '../utils/formatData.ts'
+//
+const sidebar = formatData()
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: '/sitemaps/',
   title: '前端体系导航',
   description: 'A VitePress Site',
+
   head: [
     [
       'link',
@@ -19,20 +22,8 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ],
-      },
-    ],
+    logo: '/sitemaps/logo.png', // 侧边栏logo
+    sidebar: sidebar,
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/Sonnenlicht77/sitemaps' }],
   },

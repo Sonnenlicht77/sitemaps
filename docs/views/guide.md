@@ -1,3 +1,6 @@
+<!--
+ * @Author: yangyang993 sonnenlicht@foxmail.com
+-->
 ---
 
 # <https://vitepress.dev/reference/default-theme-home-page>
@@ -17,16 +20,21 @@ aside: true
 
 <script lang="ts" setup>
 import NavList from './components/NavList.vue'
+// import sidebar from './components/sidebar.vue'
+import { useData,useRoute } from 'vitepress'
+import { onMounted, watch } from 'vue'
 
-import { useRouter ,withBase} from 'vitepress'
+import navdata from ''
 
-const router = useRouter()
+const route = useRoute()
+const data = useData()
+console.log( data)
 
-router.go(withBase('/views/00.document.guide'))
+console.log(window.location.hash)
 
 </script>
 <!-- 布局 -->
-<!-- <NavList /> -->
+<NavList />
 
 <style module>
   .home {

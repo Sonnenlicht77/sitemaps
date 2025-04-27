@@ -1,47 +1,3 @@
-/**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
- */
-
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
 :root {
 
   --primary-color: #ff69b4;
@@ -55,6 +11,20 @@
   --bg-color: #fff5f5;
   /* 浅粉色背景 */
 
+
+  /* --vp-sidebar-width: 130px; */
+  --vp-sidebar-bg-color: transparent;
+  /* 侧边栏背景色 */
+  --vp-sidebar-title-color: var(--primary-color);
+}
+
+:root {
+
+  /* 悬停粉色 */
+  --ripple-pink: rgba(255, 105, 180, 0.3);
+  /* 涟漪效果色 */
+  --text-dark: #4a4a4a;
+  /* 文字颜色 */
 }
 
 :root {
@@ -145,4 +115,52 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+
+/* custom */
+
+
+/* .VPNav {
+  background: linear-gradient(to bottom, #ffe6f0 0%, #fff5f5 100%);
+
+  z-index: 1000;
+} */
+
+/* .VPNavBar:not(.home.top) .content-body {
+  background-color: transparent !important;
+} */
+
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom: none;
+}
+
+/*  */
+.VPNavBar.has-sidebar .divider {
+  padding-left: 0 !important;
+  color: #fff;
+}
+
+/* .VPHome {
+  height: 100vh;
+  margin-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(to bottom, #ffe6f0 0%, #fff5f5 100%);
+} */
+
+/* .VPSidebarItem {} */
+
+.VPSidebarItem.level-0.is-active>.item .link>.text,
+.VPSidebarItem.level-1.is-active>.item .link>.text,
+.VPSidebarItem.level-2.is-active>.item .link>.text,
+.VPSidebarItem.level-3.is-active>.item .link>.text,
+.VPSidebarItem.level-4.is-active>.item .link>.text,
+.VPSidebarItem.level-5.is-active>.item .link>.text {
+  color: var(--primary-color) !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem;
 }

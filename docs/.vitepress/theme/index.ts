@@ -1,3 +1,7 @@
+/*
+ * @Author: yangyang993 sonnenlicht@foxmail.com
+ */
+
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
@@ -13,7 +17,5 @@ export default {
       'not-found': () => h(NotFound),
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    // ...
-  },
+  enhanceApp({ app, router, siteData }) {},
 } satisfies Theme
