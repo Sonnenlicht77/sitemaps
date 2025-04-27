@@ -1,0 +1,56 @@
+[
+  {
+    "id": "frontend",
+    "name": "前端技术",
+    "children": [
+      {
+        "name": "框架库",
+        "links": [
+          { "name": "Vue.js", "url": "https://vuejs.org", "icon": "vue" },
+          { "name": "React", "url": "https://react.dev", "icon": "react" },
+          { "name": "Svelte", "url": "https://svelte.dev", "icon": "svelte" }
+        ]
+      },
+      {
+        "name": "构建工具",
+        "links": [
+          { "name": "Vite", "url": "https://vitejs.dev", "icon": "vite" },
+          { "name": "Webpack", "url": "https://webpack.js.org", "icon": "webpack" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "design",
+    "name": "色彩设计",
+    "children": [
+      {
+        "name": "配色方案",
+        "links": [
+          { "name": "Coolors", "url": "https://coolors.co", "icon": "palette" },
+          { "name": "Adobe Color", "url": "https://color.adobe.com", "icon": "adobe" }
+        ]
+      },
+      {
+        "name": "渐变色",
+        "links": [
+          { "name": "UI Gradients", "url": "https://uigradients.com", "icon": "gradient" },
+          { "name": "WebGradients", "url": "https://webgradients.com", "icon": "gradient" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "resources",
+    "name": "资源精选",
+    "children": [
+      {
+        "name": "图标库",
+        "links": [
+          { "name": "Iconify", "url": "https://icon-sets.iconify.design", "icon": "icon" },
+          { "name": "Font Awesome", "url": "https://fontawesome.com", "icon": "font-awesome" }
+        ]
+      }
+    ]
+  }
+]
