@@ -23,8 +23,6 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    logo: '/sitemaps/logo.png', // 侧边栏logo
     sidebar: sidebar,
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/Sonnenlicht77/sitemaps' }],
