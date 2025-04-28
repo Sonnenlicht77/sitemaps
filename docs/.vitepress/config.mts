@@ -1,6 +1,9 @@
 /*
  * @Author: yangyang993 sonnenlicht@foxmail.com
  */
+/*
+ * @Author: yangyang993 sonnenlicht@foxmail.com
+ */
 import { defineConfig } from 'vitepress'
 import formatData from '../utils/formatData.ts'
 //
@@ -30,6 +33,9 @@ export default defineConfig({
   vite: {
     ssr: {
       noExternal: ['@vue/server-renderer'],
+    },
+    build: {
+      target: 'esnext',
     },
   },
 })

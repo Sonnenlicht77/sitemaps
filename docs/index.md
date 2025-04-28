@@ -1,7 +1,5 @@
 ---
 
-# <https://vitepress.dev/reference/default-theme-home-page>
-
 layout: page
 footer: false
 next: false
@@ -15,7 +13,8 @@ outline:
 aside: true
 ---
 
-<script lang="ts" setup>
+
+<!-- <script lang="ts" setup>
 
 import { useRouter ,withBase} from 'vitepress'
 
@@ -23,4 +22,4 @@ const router = useRouter()
 
 router.go(withBase('/views/00.document.guide'))
 
-</script>
+</script> -->

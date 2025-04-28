@@ -1,8 +1,11 @@
 /*
  * @Author: yangyang993 sonnenlicht@foxmail.com
  */
+/*
+ * @Author: yangyang993 sonnenlicht@foxmail.com
+ */
 import { DefaultTheme } from 'vitepress'
-import data from '../public/nav_data.json'
+import data from '../src/nav_data.json'
 
 export default function formatData(): any {
   // console.log('处理数据', data)
