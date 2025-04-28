@@ -4,5 +4,5 @@ node_modules
 *.log
 *.sqlite
 
-docs/.vitepress/dist
+# docs/.vitepress/dist
 docs/.vitepress/cache

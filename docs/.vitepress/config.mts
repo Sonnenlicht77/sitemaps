@@ -13,7 +13,6 @@ export default defineConfig({
   base: '/sitemaps/',
   title: '前端体系导航',
   description: 'A VitePress Site',
-
   head: [
     [
       'link',
