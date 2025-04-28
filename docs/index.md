@@ -11,15 +11,13 @@ outline:
   level: [2, 3]
   collapsed: false
 aside: true
+
+
 ---
 
 
-<!-- <script lang="ts" setup>
+<script setup  lang="ts">
+import Redirect from './components/Redirect.vue'
+</script>
 
-import { useRouter ,withBase} from 'vitepress'
-
-const router = useRouter()
-
-router.go(withBase('/views/00.document.guide'))
-
-</script> -->
+<Redirect />

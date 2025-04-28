@@ -18,7 +18,7 @@ export default function formatData(): any {
     const i = index > 9 ? index : `0${index}`
     sidebar.push({
       text: item.text,
-      link: `/views/${i}.${item.id}.guide.md`,
+      link: `/views/${i}_${item.id}_guide.md`,
     })
   })
 
